@@ -28,10 +28,10 @@ function App() {
   //to build inital answer with known words
   useEffect(() => {
     const lettersArray = new Array(answer.length).fill("");
+    const positionOfKnownLetters = getPositionOfKnownLetters(answer);
 
     for (let index = 0; index < answer.length; index++) {
       let letter = "";
-      const positionOfKnownLetters = getPositionOfKnownLetters(answer);
       if (
         positionOfKnownLetters.some((position) => position === index) ||
         positionOfKnownLetters.some(
