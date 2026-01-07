@@ -4,20 +4,20 @@ import { type FC } from "react";
 type KeyboardProps = {
   onKeyPressCallback: (letter: string) => void;
   wrongLetters: Set<string>;
-  guessedLetters: Set<string>;
+  answerBuilder: string[];
 };
 
 const Keyboard: FC<KeyboardProps> = ({
   onKeyPressCallback,
+  answerBuilder,
   wrongLetters,
-  guessedLetters,
 }) => {
   const renderKeys = () => {
     const keysArray = new Array(26).fill(null);
 
     return keysArray.map((_, index) => {
       const letter = String.fromCharCode(index + 65);
-      const colorClass = guessedLetters.has(letter)
+      const colorClass = answerBuilder.includes(letter)
         ? " success"
         : wrongLetters.has(letter)
         ? " error"
@@ -28,7 +28,7 @@ const Keyboard: FC<KeyboardProps> = ({
           variant="outlined"
           key={index}
           onClick={() => onKeyPressCallback(letter)}
-          disabled={wrongLetters.has(letter) || guessedLetters.has(letter)}
+          disabled={wrongLetters.has(letter) || answerBuilder.includes(letter)}
           className={"key-button" + colorClass}
         >
           {letter}
