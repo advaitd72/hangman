@@ -1,0 +1,159 @@
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 600px;
+  margin: auto;
+}
+
+button.key-button.MuiButton-outlined {
+  margin: 2px;
+
+  &.Mui-disabled {
+    &.success {
+      color: green;
+      border-color: green;
+    }
+    /* &.error {
+      color: red;
+      border-color: red;
+    } */
+  }
+}
+
+.typist {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.answer-display {
+  display: flex;
+  gap: 2px;
+
+  & > .letter-box {
+    width: 16px;
+    height: 16px;
+    border-style: solid;
+    border-width: 0 0 2px 0;
+    border-color: black;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.row {
+  padding-bottom: 10px;
+}
+
+.stickman-box {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  margin-bottom: 50px;
+
+  & > .stick-base {
+    width: 200px;
+    height: 6px;
+    background: black;
+    position: absolute;
+    top: 100%;
+    left: 200px;
+  }
+
+  & > .column {
+    width: 6px;
+    height: 200px;
+    background: black;
+    position: absolute;
+    bottom: 0%;
+    left: 264px;
+  }
+
+  & > .hanger {
+    width: 80px;
+    height: 6px;
+    background: black;
+    position: absolute;
+    bottom: 194px;
+    left: 270px;
+  }
+
+  & > .hook {
+    width: 6px;
+    height: 26px;
+    background: red;
+    position: absolute;
+    bottom: 168px;
+    left: 344px;
+  }
+
+  & > .man-head {
+    width: 30px;
+    height: 30px;
+    border-color: black;
+    border-width: 6px;
+    border-style: solid;
+    border-radius: 26px;
+    position: absolute;
+    bottom: 132px;
+    left: 326px;
+
+    &.dead {
+      bottom: 131px;
+      left: 338px;
+      transition: bottom, left 1s ease-in-out;
+    }
+  }
+
+  & > .torso {
+    width: 6px;
+    height: 65px;
+    background: black;
+    position: absolute;
+    bottom: 73px;
+    left: 344px;
+  }
+
+  & > .left-leg {
+    width: 6px;
+    height: 60px;
+    transform: rotate(29deg);
+    background: black;
+    position: absolute;
+    bottom: 23px;
+    left: 329px;
+  }
+
+  & > .right-leg {
+    width: 6px;
+    height: 60px;
+    transform: rotate(-29deg);
+    background: black;
+    position: absolute;
+    bottom: 23px;
+    left: 359px;
+  }
+
+  & > .left-hand {
+    width: 6px;
+    height: 50px;
+    transform: rotate(35deg);
+    background: black;
+    position: absolute;
+    bottom: 74px;
+    left: 328px;
+  }
+
+  & > .right-hand {
+    width: 6px;
+    height: 50px;
+    transform: rotate(-35deg);
+    background: black;
+    position: absolute;
+    bottom: 74px;
+    left: 360px;
+  }
+}
